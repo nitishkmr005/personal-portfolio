@@ -2,63 +2,70 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer components {
-    .neural-bg {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        pointer-events: none;
-        z-index: 0;
-        background-color: #f8fafc;
-        background-image: 
-            radial-gradient(#4F46E5 0.9px, transparent 0.9px),
-            radial-gradient(#4F46E5 0.9px, #f8fafc 0.9px);
-        background-size: 30px 30px;
-        background-position: 0 0, 15px 15px;
-        opacity: 0.07;
-        animation: pulse 4s ease-in-out infinite;
-    }
-
-    .glass-card {
-        background: rgba(255, 255, 255, 0.7);
-        backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 255, 255, 0.2);
-    }
+@layer base {
+  body {
+    @apply bg-background text-dark;
+  }
 }
 
-.gradient-text {
-    background: linear-gradient(135deg, #4F46E5 0%, #8B5CF6 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+@layer components {
+  .neural-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    background-color: #f8fafc;
+    background-image: 
+        radial-gradient(#4F46E5 0.9px, transparent 0.9px),
+        radial-gradient(#4F46E5 0.9px, #f8fafc 0.9px);
+    background-size: 30px 30px;
+    background-position: 0 0, 15px 15px;
+    opacity: 0.07;
+    animation: pulse 4s ease-in-out infinite;
+  }
+
+  .glass-card {
+    @apply bg-white/30 backdrop-blur-md rounded-xl shadow-lg p-6;
+  }
+  
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-accent to-secondary;
+  }
+}
+
+@layer utilities {
+  .container {
+    @apply px-4 mx-auto max-w-7xl sm:px-6 lg:px-8;
+  }
 }
 
 /* Custom smooth scroll behavior */
 html {
-    scroll-behavior: smooth;
-    scroll-padding-top: 80px;
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
 }
 
 /* Smooth transitions */
 a, button {
-    transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 /* Form inputs */
 input, textarea {
-    transition: all 0.2s ease;
+  transition: all 0.2s ease;
 }
 
 input:focus, textarea:focus {
-    outline: none;
-    border-color: #4F46E5;
-    box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.2);
+  outline: none;
+  border-color: #4F46E5;
+  box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.2);
 }
 
 @keyframes pulse {
-    0% { opacity: 0.05; }
-    50% { opacity: 0.1; }
-    100% { opacity: 0.05; }
+  0% { opacity: 0.05; }
+  50% { opacity: 0.1; }
+  100% { opacity: 0.05; }
 }
