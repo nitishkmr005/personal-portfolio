@@ -2,22 +2,25 @@
 export default {
   content: [
     "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
+    "./src/**/*.{js,ts,jsx,tsx,css}",
   ],
   theme: {
     extend: {
       colors: {
-        'primary': '#4F46E5', // Indigo for AI/ML theme
-        'secondary': '#10B981', // Emerald for data visualization
-        'accent': '#8B5CF6', // Purple for neural networks
-        'background': '#F8FAFC', // Light gray background
-        'dark': '#1E293B', // Slate dark
-        'light': '#F1F5F9' // Slate light
+        'primary': '#4F46E5',
+        'secondary': '#10B981',
+        'accent': '#8B5CF6',
+        'background': '#F8FAFC',
+        'dark': '#1E293B',
+        'light': '#F1F5F9'
       },
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'neural-pattern': 'url("data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%234F46E5\' fill-opacity=\'0.05\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")'
-      }
+      fontFamily: {
+        'sans': ['Inter', 'ui-sans-serif', 'system-ui'],
+      },
+      container: {
+        center: true,
+        padding: '2rem',
+      },
     },
   },
   plugins: [],
